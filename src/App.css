@@ -1,0 +1,46 @@
+.logo {
+  height: 32px;
+  
+  /* background: rgba(255, 255, 255, 0.2); */
+  margin: 16px;
+}
+.logo-container{
+  background-color: #0F3953;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ 
+  
+}
+
+
+.site-layout-sub-header-background {
+  background: #fff;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.container {
+  
+  position: relative;
+}
+
+.child {
+  /* width: 50px;
+  height: 50px; */
+  /* background-color: red; */
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* margin: -25px 0 0 -25px; */
+   /* apply negative top and left margins to truly center the element */
+}
+.my-header{
+  background-color:#69E2C7;
+}
+.spinner{
+  background-color: red;
+}
