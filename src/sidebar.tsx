@@ -21,7 +21,7 @@ const SideBar: React.FC = (): JSX.Element => {
 		{
 			href: '/order',
 			icon: <ShoppingCartOutlined />,
-			key: 'Order',
+			key: 'Order Histroy',
 		},
 	];
 
