@@ -128,6 +128,9 @@ function App() {
 						<Layout
 							style={{
 								marginLeft: 200,
+								display:'flex',
+								flexDirection:'column',
+								height:'100vh'
 								
 							}}>
 							<Header className ='my-header' />
