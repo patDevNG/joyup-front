@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Table, notification, Spin } from 'antd';
+import { Table, notification, Spin, Typography } from 'antd';
 import moment from 'moment';
+import { formatAsDollar} from './helpers'
+import { List } from 'antd';
 // import moment from 'moment';
 export const Order = () => {
 
@@ -44,34 +46,57 @@ export const Order = () => {
 		fetchOrder()
 	}, [])
 
-	const colums = [
+	const colums:any = [
 		{
-			title:'First Name',
-			dataIndex:'first_name',
+			title:'Order Id',
+			dataIndex:'id',
+			width:30,
+// 			render:(text:any,record:any)=>{
+// 				return (
+// <div>{text._id}</div>
+// 				)
+// 			}
 			
 		},
 		{
-			title:'Last Name',
-			dataIndex:'last_name',
+			title:'Listed Items',
+			dataIndex:'',
+			width:40,
+		render:(text:any, record:any)=> {
+
+			console.log(text, 'ahshbsdbhadsahdlHASDahdlhaD');
+			console.log(record.listItems,'DBshbfhsdbsakAHDSlds');
 			
+			
+			return(
+			
+				<div>
+					<List
+				dataSource={record.listItems}
+				renderItem={item => (
+				  <List.Item>
+					<Typography.Text mark></Typography.Text> {item}
+				  </List.Item>
+				)}
+			  />
+				</div>
+		)}
 		},
+		
 		{
-			title:'Price',
+			title:'Amount',
 			dataIndex:'price',
-			
+		render:(text: any)=>formatAsDollar(parseFloat(text)),
+			width:10
 		},
 		{
 			title:'Created At',
 			dataIndex:'created_at',
-		render:(text: React.ReactNode)=><div>{moment(`${text}`).format('ll')}</div>
+		render:(text: React.ReactNode)=><div>{moment(`${text}`).format('MMMM Do YYYY, h:mm:ss a')}</div>
 			
 		},
 
-		{
-			title:'State',
-			dataIndex:'state',
-			
-		},
+		
 	]
 	if(isLoading === true){
 		return(

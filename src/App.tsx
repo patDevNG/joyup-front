@@ -111,7 +111,7 @@ function App() {
 				<Route>
 					<Layout className='app-container'>
 						<Sider
-							
+						breakpoint='md'
 							className='app-sider'
 							style={{
 								overflow: 'hidden',
